@@ -1,4 +1,8 @@
-from . import order, shipper, shipping_cost
+#!/usr/bin/env
+from before_strategy import Order, Shipper, ShippingCost
 
-order = order.Order()
 
+order = Order(Shipper.fedex)
+cost_calulator = ShippingCost()
+cost = cost_calulator.shipping_cost(order)
+assert cost == 3.0
